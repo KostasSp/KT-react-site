@@ -2,9 +2,20 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Navbarz {
+  display: inline;
+  background-color: aqua;
+}
+
+li {
+  margin-right: 30px;
+
+  display: inline;
+}
+
+.Greeter {
+  position: absolute;
+  top: 20px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,19 +24,15 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
+.App {
+  background-color: #8b9ab8;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: top;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  color: rgb(112, 61, 61);
 }
 
 @keyframes App-logo-spin {
