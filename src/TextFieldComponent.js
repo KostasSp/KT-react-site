@@ -19,7 +19,7 @@ function TextFieldComponent(props) {
     }
   }, [input]);
 
-  props.fuck(textValue);
+  props.textField(textValue);
   console.log(textValue);
 
   return (

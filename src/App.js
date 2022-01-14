@@ -69,7 +69,7 @@ const App = () => {
       <div style={{ marginTop: "5rem" }}>
         Get definition for any word
         <Fetch callback={askData} />{" "}
-        <TextFieldComponent fuck={textFieldCallbacked} />
+        <TextFieldComponent textField={textFieldCallbacked} />
         <DisplayApiData display={receiveFetched} />
         {/* {apiData === null ? askData : apiData[0].word} */}
       </div>
