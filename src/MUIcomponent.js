@@ -1,5 +1,5 @@
 import PhotoCamera from "@material-ui/icons/PhotoCamera";
-
+import { useEffect } from "react";
 import {
   Typography,
   AppBar,
@@ -15,6 +15,10 @@ import {
 } from "@material-ui/core";
 
 function MUIcomponent() {
+  useEffect(() => {
+    document.title = "Home";
+  }, []);
+
   return (
     <>
       <CssBaseline />

@@ -1,5 +1,17 @@
+import { useState } from "react";
+
 function DisplayApiData(props) {
-  return <div>{console.log(props)}</div>;
+  const [askData, setAskData] = useState();
+
+  return (
+    <div>
+      <div id="output-box">
+        {/* {finalData.length == null ? "No API calls yet" : console.log(finalData)} */}
+        {/* set and get the text field word from local storage, or find a way to callback just that somehow */}
+        <h3>Fetched word: </h3> {props.dis}
+      </div>
+    </div>
+  );
 }
 
 export default DisplayApiData;

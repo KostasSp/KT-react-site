@@ -1,4 +1,10 @@
+import { useEffect } from "react";
+
 function About() {
+  useEffect(() => {
+    document.title = "Info";
+  }, []);
+
   return (
     <div>
       <div style={{ background: "Gold" }}>

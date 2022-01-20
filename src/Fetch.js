@@ -1,32 +1,39 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import TextField from "./TextFieldComponent";
 import { Button } from "@material-ui/core";
+import DisplayApiData from "./DisplayApiData";
+import TextFieldComponent from "./TextFieldComponent";
 
-function Fetch(props) {
+function Fetch() {
   const [apiData, setApiData] = useState({});
+  const [finalData, setFinalData] = useState();
+  const [askData, setAskData] = useState();
   const [isSending, setIsSending] = useState(false);
   const isMounted = useRef(true);
 
-  //   const updateFetchedForApp = () => {
-  //     props.callback({ apiData });
-  //   };
+  const textFieldCallbacked = (params) => {
+    setAskData(params);
+  };
 
-  //add "education" as default?
-  const fetchAPIdata = (data) =>
+  const fetchAPIdata = (data) => {
     fetch(`http://api.dictionaryapi.dev/api/v2/entries/en/${data}`)
       .then((response) => response.json())
-      .then((data) => {
-        setApiData(data);
-        console.log(data);
+      .then((data2) => {
+        setFinalData(data2[0].meanings[0].definitions[0].definition);
       });
+    //.then(modifyJson(apiData));
+  };
 
-  //then create new component and pass these as props and use .map for create table of data
+  useEffect(() => {
+    fetchAPIdata("education");
+  }, []);
 
   return (
     <div>
-      <Button onClick={() => fetchAPIdata(props.callback)}>
-        Request to fetch
-      </Button>
+      Get definition for any word<br></br>
+      <TextFieldComponent textField={textFieldCallbacked} />
+      <Button onClick={() => fetchAPIdata(askData)}>Request to fetch</Button>
+      <DisplayApiData dis={finalData} />
     </div>
   );
 }

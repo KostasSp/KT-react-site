@@ -20,7 +20,7 @@ function TextFieldComponent(props) {
   }, [input]);
 
   props.textField(textValue);
-  console.log(textValue);
+  //console.log(textValue);
 
   return (
     <Box

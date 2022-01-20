@@ -6,13 +6,11 @@ import NavBar from "./NavBar";
 import { useState, useEffect } from "react";
 import About from "./About";
 import Fetch from "./Fetch";
-import DisplayApiData from "./DisplayApiData";
-import TextFieldComponent from "./TextFieldComponent";
 //add one of those round small pics of her next to an fb/insta link?
 
 const App = () => {
   const [currState, setCurrState] = useState(<MUIcomponent />); //FB people say not to use state for my static app
-  const [askData, setAskData] = useState();
+  const [askData, setAskData] = useState({});
   const [data, setData] = useState({ fdata: [] });
   //add all components in this list, to keep it DRY
   const components = [<About />, <MUIcomponent />];
@@ -23,11 +21,6 @@ const App = () => {
     fetchedData.push(item);
     if (!askData[0]) return item;
     return fetchedData;
-  };
-
-  const textFieldCallbacked = (params) => {
-    console.log(params);
-    setAskData(params);
   };
 
   const apiDataCallbacked = (params) => {
@@ -54,6 +47,8 @@ const App = () => {
   //   };
   // }, []);
 
+  console.log("rendered in App.js");
+
   return (
     //add a message box somewhere, that can send message directly to her email
     <div className="App">
@@ -67,10 +62,7 @@ const App = () => {
         <div>{currState} </div>
       </div>
       <div style={{ marginTop: "5rem" }}>
-        Get definition for any word
-        <Fetch callback={askData} />{" "}
-        <TextFieldComponent textField={textFieldCallbacked} />
-        <DisplayApiData display={receiveFetched} />
+        <Fetch callbackz={askData} />{" "}
         {/* {apiData === null ? askData : apiData[0].word} */}
       </div>
     </div>
