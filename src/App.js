@@ -23,12 +23,6 @@ const App = () => {
     return fetchedData;
   };
 
-  const apiDataCallbacked = (params) => {
-    console.log(params);
-    setAskData(params);
-    console.log(askData);
-  };
-
   const homeState = () => {
     setCurrState(components[1]);
   };
