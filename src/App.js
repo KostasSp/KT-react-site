@@ -5,7 +5,9 @@ import { AppBar, Toolbar, Button } from "@material-ui/core";
 import NavBar from "./NavBar";
 import { useState, useEffect } from "react";
 import About from "./About";
-import Fetch from "./Fetch";
+//difference between below and above is that below I'm destructuring just the arrow function?
+import { Fetch } from "./Fetch";
+
 //add one of those round small pics of her next to an fb/insta link?
 
 const App = () => {
