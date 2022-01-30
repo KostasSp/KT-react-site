@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import TextField from "./TextFieldComponent";
 import { Button } from "@material-ui/core";
-import DisplayApiData from "./DisplayApiData";
+import DisplayApiData from "./components/display-api-data/display-api-data.component";
 import TextFieldComponent from "./TextFieldComponent";
 
-function Fetch() {
+export const Fetch = () => {
   const [apiData, setApiData] = useState({ api: [] });
   const [finalData, setFinalData] = useState();
   const [askData, setAskData] = useState();
@@ -40,6 +40,4 @@ function Fetch() {
       <DisplayApiData dis={finalData} />
     </div>
   );
-}
-
-export default Fetch;
+};

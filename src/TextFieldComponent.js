@@ -11,6 +11,8 @@ function TextFieldComponent(props) {
   const [isValid, setIsValid] = useState(false);
   const chart = useRef(null);
 
+  console.log("rendered in TextFieldComponent.js ");
+
   useEffect(() => {
     if (input.length < 2 || /\d/.test(input)) {
       setIsValid(false);
@@ -20,7 +22,6 @@ function TextFieldComponent(props) {
   }, [input]);
 
   props.textField(textValue);
-  //console.log(textValue);
 
   return (
     <Box

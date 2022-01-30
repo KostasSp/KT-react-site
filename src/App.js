@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import About from "./About";
 //difference between below and above is that below I'm destructuring just the arrow function?
 import { Fetch } from "./Fetch";
+import { Routes, Route, useRoutes } from "react-router-dom";
 
 //add one of those round small pics of her next to an fb/insta link?
 
@@ -52,10 +53,17 @@ const App = () => {
       className="App"
       style={{
         backgroundImage: "url(" + imageUrl + ")",
+        height: "100%",
+
+        /* Center and scale the image nicely */
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        overflow: "hidden",
       }}
     >
+      <Routes>
+        <Route exact path="/" component={MUIcomponent} />
+      </Routes>
       <AppBar position="relative">
         <Toolbar>
           <NavBar AboutClick={aboutState} HomeClick={homeState} />

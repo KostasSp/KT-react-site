@@ -3,6 +3,8 @@ import { useState } from "react";
 function DisplayApiData(props) {
   const [askData, setAskData] = useState();
 
+  console.log("rendered in DisplayApiData.js ");
+
   return (
     <div>
       <div id="output-box">
