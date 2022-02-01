@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-function About() {
+const About = () => {
   useEffect(() => {
     document.title = "Info";
   }, []);
@@ -14,6 +14,6 @@ function About() {
       </div>
     </div>
   );
-}
+};
 
 export default About;

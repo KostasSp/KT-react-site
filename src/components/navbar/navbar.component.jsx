@@ -3,22 +3,10 @@ import * as React from "react";
 import EmailIcon from "@mui/icons-material/Email";
 import InfoIcon from "@mui/icons-material/Info";
 import HomeIcon from "@mui/icons-material/Home";
-import About from "./About.js";
+import { Link } from "react-router-dom";
 import { useState } from "react";
-import {
-  Typography,
-  AppBar,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  CssBaseline,
-  Grid,
-  Toolbar,
-  Container,
-  Button,
-  createSvgIcon,
-} from "@material-ui/core";
+import "./navbar.styles.scss";
+import { Grid, Toolbar, createSvgIcon } from "@material-ui/core";
 
 // const HomeIcon = createSvgIcon(
 //   <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />,
@@ -28,25 +16,21 @@ import {
 function NavBar(props) {
   const [navState, setNavState] = useState();
 
-  const homeClick = (data) => {
-    props.HomeClick(data);
-  };
-
-  const aboutClick = (data) => {
-    props.AboutClick(data);
-  };
-
   return (
     <>
       <Toolbar>
         {/* maybe move the icons in the state, ie camera next to insta link */}
         <Grid container direction="row" alignItems="center">
-          <HomeIcon onClick={homeClick} />
-          Home
+          <Link className="home-link" to="/">
+            <HomeIcon className="home-icon" />
+            Home
+          </Link>
           <PhotoCamera color="action" />
           Gallery
-          <InfoIcon color="warning" onClick={aboutClick} />
-          About
+          <Link to="/about">
+            <InfoIcon color="warning" />
+            About
+          </Link>
           <EmailIcon color="info" />
           Contact info
         </Grid>
