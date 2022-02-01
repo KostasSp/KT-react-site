@@ -1,10 +1,12 @@
 .home-link {
-  //not sure why, but doesn't work if not nested, maybe bcs text "Home" isn't affected
+  display: flex;
+  align-items: center;
+  font-size: 19px;
   .home-icon {
     color: black;
     display: "flex";
-    align-items: "center";
+
     flex-wrap: "wrap";
-    font-size: 17px;
+    font-size: 21px;
   }
 }

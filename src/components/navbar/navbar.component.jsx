@@ -18,23 +18,23 @@ function NavBar(props) {
 
   return (
     <>
-      <Toolbar>
-        {/* maybe move the icons in the state, ie camera next to insta link */}
-        <Grid container direction="row" alignItems="center">
-          <Link className="home-link" to="/">
-            <HomeIcon className="home-icon" />
-            Home
-          </Link>
-          <PhotoCamera color="action" />
-          Gallery
-          <Link to="/about">
-            <InfoIcon color="warning" />
-            About
-          </Link>
-          <EmailIcon color="info" />
-          Contact info
-        </Grid>
-      </Toolbar>
+      {/* <Toolbar> */}
+      {/* maybe move the icons in the state, ie camera next to insta link */}
+      {/* <Grid container direction="row" alignItems="center"> */}
+      <Link className="home-link" to="/">
+        <HomeIcon className="home-icon" />
+        Home
+      </Link>
+      <PhotoCamera color="action" />
+      Gallery
+      <Link to="/about">
+        <InfoIcon color="warning" />
+        About
+      </Link>
+      <EmailIcon color="info" />
+      Contact info
+      {/* </Grid> */}
+      {/* </Toolbar> */}
     </>
   );
 }
