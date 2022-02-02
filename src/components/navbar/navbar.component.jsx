@@ -27,8 +27,9 @@ function NavBar(props) {
       </Link>
       <PhotoCamera color="action" />
       Gallery
-      <Link to="/about">
-        <InfoIcon color="warning" />
+      {/* temporary css fix */}
+      <Link className="home-link" to="/about">
+        <InfoIcon className="home-icon" color="warning" />
         About
       </Link>
       <EmailIcon color="info" />

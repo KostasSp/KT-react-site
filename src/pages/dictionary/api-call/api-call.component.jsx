@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import TextField from "../../TextFieldComponent";
+import TextField from "../api-textfield/api-textfield.component.jsx";
 import { Button } from "@material-ui/core";
-import DisplayApiData from "../../components/display-api-data/display-api-data.component";
-import TextFieldComponent from "../../TextFieldComponent";
+import DisplayApiData from "../display-api-data/display-api-data.component";
+import TextFieldComponent from "../api-textfield/api-textfield.component.jsx";
 
 export const Fetch = () => {
   const [apiData, setApiData] = useState({ api: [] });
@@ -11,7 +11,7 @@ export const Fetch = () => {
   const [isSending, setIsSending] = useState(false);
   const isMounted = useRef(true);
 
-  console.log("rendered in Fetch.js ");
+  console.log("rendered in api-call.js ");
 
   const textFieldCallbacked = (params) => {
     setAskData(params);
@@ -28,9 +28,9 @@ export const Fetch = () => {
       });
   };
 
-  useEffect(() => {
-    fetchAPIdata("education");
-  }, []);
+  // useEffect(() => {
+  //   fetchAPIdata("education");
+  // }, []);
 
   return (
     <div>

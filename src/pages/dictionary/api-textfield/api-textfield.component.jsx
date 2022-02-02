@@ -4,12 +4,12 @@ import TextField from "@mui/material/TextField";
 import { Button } from "@material-ui/core";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { useRef, useState, useEffect } from "react";
+import "./api-textfield.styles.scss";
 
 function TextFieldComponent(props) {
   const [textValue, setTextValue] = useState();
   const [input, setInput] = useState("");
   const [isValid, setIsValid] = useState(false);
-  const chart = useRef(null);
 
   console.log("rendered in TextFieldComponent.js ");
 
@@ -44,9 +44,9 @@ function TextFieldComponent(props) {
           variant="filled"
         />
       </form>
-      <span style={{ fontSize: "13px" }} ref={chart}>
+      <span style={{ fontSize: "13px" }}>
         {isValid ? (
-          <CheckCircleIcon></CheckCircleIcon>
+          <CheckCircleIcon className="check-icon" />
         ) : (
           "At least two characters and no numbers"
         )}

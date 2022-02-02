@@ -4,7 +4,7 @@ import NavBar from "./components/navbar/navbar.component.jsx";
 import { useState, useEffect } from "react";
 import About from "./pages/about/about.component";
 //difference between below and above is that below I'm destructuring just the arrow function?
-import { Fetch } from "./pages/dictionary/dictionary.component";
+import { Fetch } from "./pages/dictionary/api-call/api-call.component";
 import { BrowserRouter, Routes, Route, useRoutes } from "react-router-dom";
 import HomePage from "./pages/homepage/homepage.component";
 
