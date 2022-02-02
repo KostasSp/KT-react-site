@@ -21,7 +21,7 @@ function TextFieldComponent(props) {
     }
   }, [input]);
 
-  props.textField(textValue);
+  props.textField(input);
 
   return (
     <Box
@@ -34,12 +34,9 @@ function TextFieldComponent(props) {
     >
       <form>
         <TextField
-          value={textValue}
+          value={input}
           id="input"
-          onChange={(e) => [
-            setTextValue(e.target.value),
-            setInput(e.target.value),
-          ]}
+          onChange={(e) => setInput(e.target.value)}
           label="type here"
           variant="filled"
         />

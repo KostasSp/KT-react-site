@@ -1,5 +1,6 @@
 // import MUIcomponent from "../../MUIcomponent";
 import PhotoCamera from "@material-ui/icons/PhotoCamera";
+import "./homepage.styles.scss";
 import { useEffect } from "react";
 import {
   Typography,
@@ -22,20 +23,28 @@ const HomePage = () => {
       <CssBaseline />
       <br></br>
       <Container maxWidth="sm">
-        <Typography
-          variant="h3"
-          align="center"
-          color="textPrimary"
-          gutterBottom
-        >
-          <PhotoCamera />
-          Hello, I'm Kat
-        </Typography>
-        <Typography variant="h5" align="center" color="textSecondary" paragraph>
-          I'm a classical studies tutor, with a master's degree in online
-          teaching
-        </Typography>
+        <div className="greeting">
+          <Typography
+            variant="h3"
+            align="center"
+            //      color="textPrimary"
+            gutterBottom
+          >
+            <PhotoCamera />
+            Hello, I'm Kat
+          </Typography>
+          <Typography
+            variant="h5"
+            align="center"
+            //      color="textSecondary"
+            paragraph
+          >
+            I'm a classical studies tutor, with a Master's degree in online
+            teaching
+          </Typography>
+        </div>
       </Container>
+
       <Button variant="contained" disabled>
         Disabled
       </Button>

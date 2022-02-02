@@ -14,8 +14,6 @@ import { Grid, Toolbar, createSvgIcon } from "@material-ui/core";
 // );
 
 function NavBar(props) {
-  const [navState, setNavState] = useState();
-
   return (
     <>
       {/* <Toolbar> */}

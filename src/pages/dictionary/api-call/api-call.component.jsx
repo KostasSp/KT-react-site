@@ -8,7 +8,6 @@ export const Fetch = () => {
   const [apiData, setApiData] = useState({ api: [] });
   const [finalData, setFinalData] = useState();
   const [askData, setAskData] = useState();
-  const [isSending, setIsSending] = useState(false);
   const isMounted = useRef(true);
 
   console.log("rendered in api-call.js ");

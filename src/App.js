@@ -7,6 +7,7 @@ import About from "./pages/about/about.component";
 import { Fetch } from "./pages/dictionary/api-call/api-call.component";
 import { BrowserRouter, Routes, Route, useRoutes } from "react-router-dom";
 import HomePage from "./pages/homepage/homepage.component";
+import { ReactComponent as Logo } from "./assets/blackboard.svg";
 
 //add one of those round small pics of her next to an fb/insta link?
 
@@ -14,7 +15,9 @@ const App = () => {
   const [currState, setCurrState] = useState(); //FB people say not to use state for my static app
   const [askData, setAskData] = useState({});
   const [data, setData] = useState({ fdata: [] });
-  const imageUrl = `https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=628&q=80`;
+  //maybe use blackboard only in a small part of the page, for the dictionary
+  const imageUrl =
+    "https://cdn.pixabay.com/photo/2021/07/28/03/37/blackboard-6498216_960_720.jpg";
 
   const receiveFetched = (item) => {
     let fetchedData = data["fdata"];
@@ -45,11 +48,11 @@ const App = () => {
       }}
     >
       <BrowserRouter>
-        <AppBar position="relative">
+        {/* <AppBar position="relative">
           <Toolbar>
-            <NavBar />
+          <NavBar />
           </Toolbar>
-        </AppBar>
+        </AppBar> */}
         <Routes>
           {/* I believe these have to be in < /> because they're not class component */}
           <Route exact path="/" element={<HomePage />} />
